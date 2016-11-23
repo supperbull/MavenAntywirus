@@ -24,7 +24,7 @@ public class Antywirus {
     private PreparedStatement dropTableAntywirStat;
     private PreparedStatement deleteFrompakietStat;
     private PreparedStatement deleteFromAntywirStat;
-    private PreparedStatement updateAntywirStat;
+    private PreparedStatement updateantywirStat;
     private PreparedStatement updatepakietStat;
 
 
@@ -54,12 +54,12 @@ public class Antywirus {
                     "DELETE FROM pakiet where id_pakiet=?");
             deleteFromAntywirStat=conn.prepareStatement(
                     "DELETE FROM antywirus WHERE id_nazwa=?");
-            /*
-            updateAntywirStat=conn.prepareStatement(
+
+            updateantywirStat=conn.prepareStatement(
                     "UPDATE antywirus SET nazwaAntywir=?,opis=?,ocena=?,idpakiet=? WHERE id_nazwa=?");
             updatepakietStat=conn.prepareStatement(
-                    "UPDATE antywirus SET pakiet=?,opis=?,cena=? WHERE id_pakiet=?");
-            */
+                    "UPDATE pakiet SET pakiet=?,opis=?,cena=? WHERE id_pakiet=?");
+
             dropTablepakietStat=conn.prepareStatement(
                     "DROP table pakiet");
             dropTableAntywirStat= conn.prepareStatement(
@@ -114,6 +114,34 @@ public class Antywirus {
             insertpakietStat.setString(2, pak.getOpis());
             insertpakietStat.setDouble(3, pak.getcena());
             insertpakietStat.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean updateInPakiet(TabelaPakiet pak){
+        try {
+            updatepakietStat.setString(1, pak.getpakiet());
+            updatepakietStat.setString(2, pak.getOpis());
+            updatepakietStat.setDouble(3, pak.getcena());
+            updatepakietStat.setLong(4, pak.getid_pakiet());
+            updatepakietStat.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+    public boolean updateInAntywir(TabelaAntywir anty){
+        try {
+            updateantywirStat.setString(1, anty.getNazwaAntywir());
+            updateantywirStat.setString(2, anty.getOpis());
+            updateantywirStat.setDouble(3, anty.getocena());
+            updateantywirStat.setLong(4, anty.getidpakiet());
+            updateantywirStat.setLong(5, anty.getid_nazwa());
+            updateantywirStat.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
