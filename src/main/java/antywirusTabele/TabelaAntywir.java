@@ -7,7 +7,7 @@ public class TabelaAntywir {
         private Long id_nazwa;
         private String nazwaAntywir;
         private String opis;
-        private int ocena;
+        private double ocena;
         private Long IdPakiet;
 
         public Long getId_nazwa() {
@@ -34,7 +34,7 @@ public class TabelaAntywir {
             this.opis = opis;
         }
 
-        public int getocena() {
+        public double getocena() {
             return ocena;
         }
 
