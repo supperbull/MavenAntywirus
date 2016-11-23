@@ -73,4 +73,59 @@ public class AntywirusTest {
         assertEquals("darmowy",me.get(0).getpakiet());
     }
 
+
+    @Test
+    public void selectPakiet() throws Exception {
+        TabelaPakiet m1=new TabelaPakiet();
+        m1.setpakiet("Ultimate");
+        m1.setOpis("Najwyższa wersja");
+        m1.setcena(399.99);
+        anty.insertInPakiet(m1);
+        List<TabelaPakiet> me=anty.selectPakiet();
+
+        TabelaPakiet c1=new TabelaPakiet();
+        c1.setpakiet("damowy");
+        c1.setOpis("Do użytku domowego");
+        c1.setcena(0.0);
+        c1.setid_pakiet(me.get(0).getid_pakiet());
+        TabelaPakiet c2=new TabelaPakiet();
+        c2.setpakiet("darmowy");
+        c2.setOpis("Dla firm");
+        c2.setcena(100.0);
+        c2.setid_pakiet(me.get(0).getid_pakiet());
+        TabelaPakiet c3=new TabelaPakiet();
+        c3.setpakiet("darmowy");
+        c3.setOpis("Dla firm");
+        c3.setcena(100.0);
+        c3.setid_pakiet(me.get(0).getid_pakiet());
+        assertTrue(anty.insertInPakiet(c1));
+        assertTrue(anty.insertInPakiet(c2));
+        assertTrue(anty.insertInPakiet(c3));
+
+        List<TabelaPakiet> cl=anty.selectPakiet();
+
+        assertEquals(4,cl.size());
+
+    }
+
+    @Test
+    public void selectModel() throws Exception {
+        TabelaPakiet m1=new TabelaPakiet();
+        m1.setpakiet("darmowy");
+        m1.setOpis("Antywirus do użytku domowego");
+        m1.setcena(0.0);
+        TabelaPakiet m2=new TabelaPakiet();
+        m2.setpakiet("Firmowy");
+        m2.setOpis("Antywirus do użytku domowego");
+        m2.setcena(199.99);
+        TabelaPakiet m3=new TabelaPakiet();
+        m3.setpakiet("Ultimate");
+        m3.setOpis("Antywirus najwyższa wersja");
+        m3.setcena(399.99);
+        assertTrue(anty.insertInPakiet(m1));
+        assertTrue(anty.insertInPakiet(m2));
+        assertTrue(anty.insertInPakiet(m3));
+        List<TabelaPakiet> me=anty.selectPakiet();
+        assertEquals(3,me.size());
+    }
 }
