@@ -38,7 +38,7 @@ public class TabelaPakiet {
         return cena;
     }
 
-    public void setcena(int cena) {
+    public void setcena(double cena) {
         this.cena = cena;
     }
 

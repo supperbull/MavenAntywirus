@@ -39,22 +39,23 @@ public class Antywirus {
             createTable();
 
 
-            insertAntywirStat = conn.prepareStatement(
-                    "insert into antywirus values ('Nazwa','opis opis opis',8.5,5);");
+
             insertpakietStat =conn.prepareStatement(
-                    "INSERT INTO pakiet VALUES ('pakiet','opis',150.99)");
+                    "INSERT INTO pakiet VALUES (NULL,?,?,?)");
+            insertAntywirStat = conn.prepareStatement(
+                    "insert into antywirus values (NULL,?,?,?,?);");
             selectpakietStat=conn.prepareStatement
-                    ("Select * from kategoria");
-            selectAntywirStat=conn.prepareStatement
                     ("Select * from pakiet");
+            selectAntywirStat=conn.prepareStatement
+                    ("Select * from antywirus");
             deleteFrompakietStat=conn.prepareStatement(
-                    "DELETE FROM kategoria where id_kategoria=1");
+                    "DELETE FROM pakiet where id_pakiet=1");
             deleteFromAntywirStat=conn.prepareStatement(
-                    "DELETE FROM pakiet WHERE id_pakiet=1");
+                    "DELETE FROM antywirus WHERE id_nazwa=1");
             dropTablepakietStat=conn.prepareStatement(
-                    "DROP table kategoria");
+                    "DROP table pakiet");
             dropTableAntywirStat= conn.prepareStatement(
-                    "DROP TABLE pakiet");
+                    "DROP TABLE antywirus");
 
         } catch (SQLException e) {
 
@@ -69,7 +70,7 @@ public class Antywirus {
 
     public boolean createTable(){
 
-        String createAntywirString="CREATE TABLE IF NOT EXISTS antywirus ( id_nazwa INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nazwaAntywir TEXT, opis TEXT, ocena TEXT, Idpakiet LONG, FOREIGN KEY(Idpakiet) REFERENCES pakiet(id_pakiet))";
+        String createAntywirString="CREATE TABLE IF NOT EXISTS antywirus ( id_nazwa INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nazwaAntywir TEXT, opis TEXT, ocena TEXT, idpakiet LONG, FOREIGN KEY(idpakiet) REFERENCES pakiet(id_pakiet))";
         String createpakietString="CREATE TABLE IF NOT EXISTS pakiet ( id_pakiet INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, pakiet TEXT, opis TEXT, cena DOUBLE)";
 
         try {
@@ -82,13 +83,12 @@ public class Antywirus {
         return true;
     }
 
-/*
     public boolean insertInAntywir(TabelaAntywir ant){
         try {
             insertAntywirStat.setString(1, ant.getNazwaAntywir());
             insertAntywirStat.setString(2, ant.getOpis());
             insertAntywirStat.setDouble(3, ant.getocena());
-            insertAntywirStat.setLong(4,ant.getIdpakiet());
+            insertAntywirStat.setLong(4,ant.getidpakiet());
             insertAntywirStat.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -97,7 +97,8 @@ public class Antywirus {
         return true;
     }
 
-    public boolean insertInPakiet(Tabelapakiet pak){
+
+    public boolean insertInPakiet(TabelaPakiet pak){
         try {
             insertpakietStat.setString(1, pak.getpakiet());
             insertpakietStat.setString(2, pak.getOpis());
@@ -109,7 +110,46 @@ public class Antywirus {
         }
         return true;
     }
-*/
+
+    public List<TabelaAntywir> selectAntywir(){
+        List<TabelaAntywir> allAntywir =new ArrayList();
+        try {
+            ResultSet resultSet = selectAntywirStat.executeQuery();
+            while (resultSet.next()) {
+                TabelaAntywir c=new TabelaAntywir();
+                c.setid_nazwa(resultSet.getLong("id_nazwa"));
+                c.setNazwaAntywir(resultSet.getString("nazwaAntywir"));
+                c.setOpis(resultSet.getString("opis"));
+                c.setocena(resultSet.getDouble("ocena"));
+                c.setidpakiet(resultSet.getLong("idpakiet"));
+                allAntywir.add(c);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allAntywir;
+    }
+
+    public List<TabelaPakiet> selectPakiet(){
+        List<TabelaPakiet> allPakiet =new ArrayList();
+        try {
+            ResultSet resultSet = selectpakietStat.executeQuery();
+            while (resultSet.next()) {
+                TabelaPakiet m=new TabelaPakiet();
+                m.setid_pakiet(resultSet.getLong("id_pakiet"));
+                m.setpakiet(resultSet.getString("pakiet"));
+                m.setOpis(resultSet.getString("opis"));
+                m.setcena(resultSet.getDouble("cena"));
+                allPakiet.add(m);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allPakiet;
+    }
+
 
     public boolean dropTable(){
         try {

@@ -38,7 +38,7 @@ public class TabelaAntywir {
             return ocena;
         }
 
-        public void setocena(int ocena) {
+        public void setocena(double ocena) {
             this.ocena = ocena;
         }
 
