@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -89,7 +90,7 @@ public class AntywirusTest {
         c1.setcena(0.0);
         c1.setid_pakiet(me.get(0).getid_pakiet());
         TabelaPakiet c2=new TabelaPakiet();
-        c2.setpakiet("darmowy");
+        c2.setpakiet("firmowy");
         c2.setOpis("Dla firm");
         c2.setcena(100.0);
         c2.setid_pakiet(me.get(0).getid_pakiet());
@@ -109,7 +110,7 @@ public class AntywirusTest {
     }
 
     @Test
-    public void selectModel() throws Exception {
+    public void selectPakiett() throws Exception {
         TabelaPakiet m1=new TabelaPakiet();
         m1.setpakiet("darmowy");
         m1.setOpis("Antywirus do użytku domowego");
@@ -127,5 +128,41 @@ public class AntywirusTest {
         assertTrue(anty.insertInPakiet(m3));
         List<TabelaPakiet> me=anty.selectPakiet();
         assertEquals(3,me.size());
+    }
+
+    @Test
+    public void deleteFromPakietById() throws Exception {
+
+        TabelaPakiet m1=new TabelaPakiet();
+        m1.setpakiet("Darmowy");
+        m1.setOpis("Opis");
+        m1.setcena(0.0);
+        anty.insertInPakiet(m1);
+        TabelaPakiet m2=new TabelaPakiet();
+        m2.setpakiet("Darcccmowy");
+        m2.setOpis("Opcccis");
+        m2.setcena(10.0);
+        anty.insertInPakiet(m2);
+        List<TabelaPakiet> listMod=anty.selectPakiet();
+        assertTrue(anty.deleteFromPakietById(listMod.get(0)));
+        listMod=anty.selectPakiet();
+        assertEquals(1,listMod.size());
+    }
+
+
+    @Test
+    public void dropTable() throws Exception {
+        assertTrue(anty.dropTable());
+        TabelaPakiet m1=new TabelaPakiet();
+        m1.setpakiet("Nowyy");
+        m1.setOpis("Nowy");
+        m1.setcena(0.0);
+        assertFalse(anty.insertInPakiet(m1));
+    }
+
+    @Test
+    public void closeCon() throws Exception {
+        assertTrue(anty.closeCon());
+        assertFalse(anty.createTable());
     }
 }

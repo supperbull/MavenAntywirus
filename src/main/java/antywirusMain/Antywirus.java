@@ -49,9 +49,9 @@ public class Antywirus {
             selectAntywirStat=conn.prepareStatement
                     ("Select * from antywirus");
             deleteFrompakietStat=conn.prepareStatement(
-                    "DELETE FROM pakiet where id_pakiet=1");
+                    "DELETE FROM pakiet where id_pakiet=?");
             deleteFromAntywirStat=conn.prepareStatement(
-                    "DELETE FROM antywirus WHERE id_nazwa=1");
+                    "DELETE FROM antywirus WHERE id_nazwa=?");
             dropTablepakietStat=conn.prepareStatement(
                     "DROP table pakiet");
             dropTableAntywirStat= conn.prepareStatement(
@@ -149,6 +149,20 @@ public class Antywirus {
             e.printStackTrace();
         }
         return allPakiet;
+    }
+
+
+    public boolean deleteFromPakietById(TabelaPakiet idpak){
+        try {
+            deleteFrompakietStat.setLong(1,idpak.getid_pakiet());
+            deleteFrompakietStat.execute();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+
     }
 
 
