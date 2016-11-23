@@ -10,11 +10,11 @@ public class TabelaPakiet {
     private String opis;
     private double cena;
 
-    public Long getId_pakiet() {
+    public Long getid_pakiet() {
         return id_pakiet;
     }
 
-    public void setId_pakiet(Long id_pakiet) {
+    public void setid_pakiet(Long id_pakiet) {
         this.id_pakiet = id_pakiet;
     }
 

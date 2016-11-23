@@ -4,6 +4,8 @@ import antywirusTabele.TabelaAntywir;
 import antywirusTabele.TabelaPakiet;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Redbullek on 2016-11-22.
@@ -36,13 +38,10 @@ public class Antywirus {
             stat = conn.createStatement();
             createTable();
 
-            /*
             insertAntywirStat = conn.prepareStatement(
                     "insert into antywirus values ('Nazwa','opis opis opis',8.5,5);");
             insertPakietStat =conn.prepareStatement(
                     "INSERT INTO pakiet VALUES ('Pakiet','opis',150.99)");
-
-
             selectPakietStat=conn.prepareStatement
                     ("Select * from kategoria");
             selectAntywirStat=conn.prepareStatement
@@ -55,13 +54,17 @@ public class Antywirus {
                     "DROP table kategoria");
             dropTableAntywirStat= conn.prepareStatement(
                     "DROP TABLE pakiet");
-            */
 
         } catch (SQLException e) {
 
             e.printStackTrace();
         }
     }
+
+    //-----------------------------------------------------------------------------------------------
+    //Funkcje
+
+
 
     public boolean createTable(){
 
@@ -77,4 +80,22 @@ public class Antywirus {
         }
         return true;
     }
+
+/*
+    public boolean insertInAntywir(TabelaAntywir ant){
+        try {
+            insertAntywirStat.setString(1, ant.getNazwaAntywir());
+            insertAntywirStat.setString(2, ant.getOpis());
+            insertAntywirStat.setDouble(3, ant.getocena());
+            insertAntywirStat.setLong(4,ant.getIdPakiet());
+            insertAntywirStat.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+*/
+
     }
