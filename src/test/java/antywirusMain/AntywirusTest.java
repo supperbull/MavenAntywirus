@@ -59,8 +59,18 @@ public class AntywirusTest {
         assertTrue(anty.insertInAntywir(c1));
         List<TabelaPakiet> ce=anty.selectPakiet();
         assertEquals("Darmowy",ce.get(0).getpakiet());
+    }
 
 
+    @Test
+    public void insertInPakiet() throws Exception {
+        TabelaPakiet m1=new TabelaPakiet();
+        m1.setpakiet("darmowy");
+        m1.setOpis("Antywirus do użytku domowego");
+        m1.setcena(0.0);
+        assertTrue(anty.insertInPakiet(m1));
+        List<TabelaPakiet> me=anty.selectPakiet();
+        assertEquals("darmowy",me.get(0).getpakiet());
     }
 
 }
