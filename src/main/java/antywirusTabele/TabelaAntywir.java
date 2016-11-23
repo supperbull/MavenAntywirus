@@ -8,13 +8,13 @@ public class TabelaAntywir {
         private String nazwaAntywir;
         private String opis;
         private double ocena;
-        private Long IdPakiet;
+        private Long idpakiet;
 
-        public Long getId_nazwa() {
+        public Long getid_nazwa() {
             return id_nazwa;
         }
 
-        public void setId_nazwa(Long id_nazwa) {
+        public void setid_nazwa(Long id_nazwa) {
             this.id_nazwa = id_nazwa;
         }
 
@@ -42,11 +42,11 @@ public class TabelaAntywir {
             this.ocena = ocena;
         }
 
-        public Long getIdPakiet() {
-            return IdPakiet;
+        public Long getidpakiet() {
+            return idpakiet;
         }
 
-        public void setIdPakiet(Long IdPakiet) {
-            this.IdPakiet = IdPakiet;
+        public void setidpakiet(Long idpakiet) {
+            this.idpakiet = idpakiet;
         }
 }
