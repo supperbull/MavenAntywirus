@@ -111,4 +111,27 @@ public class Antywirus {
     }
 */
 
+    public boolean dropTable(){
+        try {
+
+            dropTableAntywirStat.execute();
+            dropTablepakietStat.execute();
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+    public boolean closeCon(){
+        try {
+            conn.close();
+
+        } catch(SQLException e) {
+            System.err.println("Problem z zamknieciem polaczenia");
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
     }
