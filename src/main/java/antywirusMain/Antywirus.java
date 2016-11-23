@@ -24,6 +24,8 @@ public class Antywirus {
     private PreparedStatement dropTableAntywirStat;
     private PreparedStatement deleteFrompakietStat;
     private PreparedStatement deleteFromAntywirStat;
+    private PreparedStatement updateAntywirStat;
+    private PreparedStatement updatepakietStat;
 
 
     public Antywirus (){
@@ -52,6 +54,12 @@ public class Antywirus {
                     "DELETE FROM pakiet where id_pakiet=?");
             deleteFromAntywirStat=conn.prepareStatement(
                     "DELETE FROM antywirus WHERE id_nazwa=?");
+            /*
+            updateAntywirStat=conn.prepareStatement(
+                    "UPDATE antywirus SET nazwaAntywir=?,opis=?,ocena=?,idpakiet=? WHERE id_nazwa=?");
+            updatepakietStat=conn.prepareStatement(
+                    "UPDATE antywirus SET pakiet=?,opis=?,cena=? WHERE id_pakiet=?");
+            */
             dropTablepakietStat=conn.prepareStatement(
                     "DROP table pakiet");
             dropTableAntywirStat= conn.prepareStatement(
@@ -97,6 +105,7 @@ public class Antywirus {
         }
         return true;
     }
+
 
 
     public boolean insertInPakiet(TabelaPakiet pak){
@@ -152,10 +161,22 @@ public class Antywirus {
     }
 
 
-    public boolean deleteFromPakietById(TabelaPakiet idpak){
+    public boolean deleteFromPakiet(TabelaPakiet idpak){
         try {
-            deleteFrompakietStat.setLong(1,idpak.getid_pakiet());
+            deleteFrompakietStat.setLong(1, idpak.getid_pakiet());
             deleteFrompakietStat.execute();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+
+    }
+    public boolean deleteFromAntywir(TabelaAntywir idant){
+        try {
+            deleteFromAntywirStat.setLong(1,idant.getid_nazwa());
+            deleteFromAntywirStat.execute();
         }
         catch (SQLException e){
             e.printStackTrace();

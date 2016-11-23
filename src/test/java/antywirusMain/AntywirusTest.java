@@ -1,7 +1,6 @@
 package antywirusMain;
 import antywirusTabele.TabelaAntywir;
 import antywirusTabele.TabelaPakiet;
-import antywirusMain.Antywirus;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -110,28 +109,44 @@ public class AntywirusTest {
     }
 
     @Test
-    public void selectPakiett() throws Exception {
-        TabelaPakiet m1=new TabelaPakiet();
-        m1.setpakiet("darmowy");
-        m1.setOpis("Antywirus do użytku domowego");
-        m1.setcena(0.0);
-        TabelaPakiet m2=new TabelaPakiet();
-        m2.setpakiet("Firmowy");
-        m2.setOpis("Antywirus do użytku domowego");
-        m2.setcena(199.99);
-        TabelaPakiet m3=new TabelaPakiet();
-        m3.setpakiet("Ultimate");
-        m3.setOpis("Antywirus najwyższa wersja");
-        m3.setcena(399.99);
-        assertTrue(anty.insertInPakiet(m1));
-        assertTrue(anty.insertInPakiet(m2));
-        assertTrue(anty.insertInPakiet(m3));
+    public void selectantywir() throws Exception {
+        TabelaPakiet w1=new TabelaPakiet();
+        w1.setpakiet("darmowy");
+        w1.setOpis("Antywirus do użytku domowego");
+        w1.setcena(0.0);
+        TabelaPakiet w2=new TabelaPakiet();
+        w2.setpakiet("Firmowy");
+        w2.setOpis("Antywirus do użytku domowego");
+        w2.setcena(199.99);
+        assertTrue(anty.insertInPakiet(w1));
+        assertTrue(anty.insertInPakiet(w2));
         List<TabelaPakiet> me=anty.selectPakiet();
-        assertEquals(3,me.size());
+
+        TabelaAntywir e1=new TabelaAntywir();
+        e1.setNazwaAntywir("Ultimate");
+        e1.setOpis("Antywirus najwyższa wersja");
+        e1.setocena(8.5);
+        e1.setidpakiet(me.get(0).getid_pakiet());
+        TabelaAntywir e2=new TabelaAntywir();
+        e2.setNazwaAntywir("Ultimateeeeeee");
+        e2.setOpis("Antywirus najweeeeyższa wersja");
+        e2.setocena(8.3);
+        e2.setidpakiet(me.get(0).getid_pakiet());
+        TabelaAntywir e3=new TabelaAntywir();
+        e3.setNazwaAntywir("Ultimateeeeeee");
+        e3.setOpis("Antywirus najweeeeyższa wersja");
+        e3.setocena(8.3);
+        e3.setidpakiet(me.get(1).getid_pakiet());
+
+        assertTrue(anty.insertInAntywir(e1));
+        assertTrue(anty.insertInAntywir(e2));
+        assertTrue(anty.insertInAntywir(e3));
+        List<TabelaAntywir> me2=anty.selectAntywir();
+        assertEquals(3,me2.size());
     }
 
     @Test
-    public void deleteFromPakietById() throws Exception {
+    public void deleteFromPakiet() throws Exception {
 
         TabelaPakiet m1=new TabelaPakiet();
         m1.setpakiet("Darmowy");
@@ -143,10 +158,33 @@ public class AntywirusTest {
         m2.setOpis("Opcccis");
         m2.setcena(10.0);
         anty.insertInPakiet(m2);
-        List<TabelaPakiet> listMod=anty.selectPakiet();
-        assertTrue(anty.deleteFromPakietById(listMod.get(0)));
-        listMod=anty.selectPakiet();
-        assertEquals(1,listMod.size());
+        List<TabelaPakiet> listPak=anty.selectPakiet();
+        assertTrue(anty.deleteFromPakiet(listPak.get(0)));
+        listPak=anty.selectPakiet();
+        assertEquals(1,listPak.size());
+    }
+
+    @Test
+    public void deleteFromAntywir() throws Exception {
+
+        TabelaPakiet m1=new TabelaPakiet();
+        m1.setpakiet("Darmowy");
+        m1.setOpis("Pakiet stosowany do użytku domowego, wersja darmowa");
+        m1.setcena(0.00);
+        anty.insertInPakiet(m1);
+        List<TabelaPakiet> me=anty.selectPakiet();
+
+        TabelaAntywir c1=new TabelaAntywir();
+        c1.setNazwaAntywir("Awast");
+        c1.setOpis("Antywirus do użytku domowego");
+        c1.setocena(7.5);
+        c1.setidpakiet(me.get(0).getid_pakiet());
+        assertTrue(anty.insertInAntywir(c1));
+
+        List<TabelaAntywir> listAntywir=anty.selectAntywir();
+        assertTrue(anty.deleteFromAntywir(listAntywir.get(0)));
+        listAntywir=anty.selectAntywir();
+        assertEquals(0,listAntywir.size());
     }
 
 
