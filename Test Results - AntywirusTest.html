@@ -572,8 +572,8 @@ jQuery.cookie = function(name, value, options) {
 <body>
 <div id="container">
 <div id="header">
-<div class="time">3.54 s</div>
-<h1>AntywirusTest: <strong><span class="total">10 total, </span><span class="passed">10 passed</span></strong>
+<div class="time">2.77 s</div>
+<h1>AntywirusTest: <strong><span class="total">12 total, </span><span class="passed">12 passed</span></strong>
 </h1>
 <div id="treecontrol">
 <ul>
@@ -591,68 +591,78 @@ jQuery.cookie = function(name, value, options) {
 <ul id="tree">
 <li xmlns="" class="level top open">
 <span><em class="time">
-<div class="time">3.54 s</div>
+<div class="time">2.77 s</div>
 </em>AntywirusTest</span>
 <ul>
 <li class="level test">
 <span><em class="time">
-<div class="time">2.09 s</div>
+<div class="time">1.07 s</div>
 </em><em class="status">passed</em>selectantywir</span>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">133 ms</div>
+<div class="time">116 ms</div>
 </em><em class="status">passed</em>testConn</span>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">204 ms</div>
+<div class="time">192 ms</div>
 </em><em class="status">passed</em>deleteFromAntywir</span>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">222 ms</div>
+<div class="time">177 ms</div>
 </em><em class="status">passed</em>dropTable</span>
 <ul>
 <li class="text">
-<span class="stderr">org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: pakiet)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:909)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:921)<br/>	at org.sqlite.core.DB.execute(DB.java:825)<br/>	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:53)<br/>	at antywirusMain.Antywirus.insertInPakiet(Antywirus.java:107)<br/>	at antywirusMain.AntywirusTest.dropTable(AntywirusTest.java:200)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)<br/>	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: antywirus)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:909)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:921)<br/>	at org.sqlite.core.DB.execute(DB.java:825)<br/>	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:53)<br/>	at antywirusMain.Antywirus.dropTable(Antywirus.java:184)<br/>	at antywirusMain.AntywirusTest.tearDown(AntywirusTest.java:28)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/></span>
+<span class="stderr">org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: pakiet)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:909)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:921)<br/>	at org.sqlite.core.DB.execute(DB.java:825)<br/>	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:53)<br/>	at antywirusMain.Antywirus.insertInPakiet(Antywirus.java:116)<br/>	at antywirusMain.AntywirusTest.dropTable(AntywirusTest.java:245)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)<br/>	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: antywirus)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:909)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:921)<br/>	at org.sqlite.core.DB.execute(DB.java:825)<br/>	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:53)<br/>	at antywirusMain.Antywirus.dropTable(Antywirus.java:221)<br/>	at antywirusMain.AntywirusTest.tearDown(AntywirusTest.java:27)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/></span>
 </li>
 </ul>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">109 ms</div>
+<div class="time">114 ms</div>
 </em><em class="status">passed</em>createTable</span>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">198 ms</div>
+<div class="time">153 ms</div>
+</em><em class="status">passed</em>updateInPakiet</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">180 ms</div>
 </em><em class="status">passed</em>deleteFromPakiet</span>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">147 ms</div>
+<div class="time">155 ms</div>
 </em><em class="status">passed</em>insertInAntywir</span>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">132 ms</div>
+<div class="time">137 ms</div>
 </em><em class="status">passed</em>insertInPakiet</span>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">132 ms</div>
+<div class="time">124 ms</div>
 </em><em class="status">passed</em>closeCon</span>
 <ul>
 <li class="text">
-<span class="stderr">org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (Connection is closed)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:909)<br/>	at org.sqlite.core.CoreStatement.internalClose(CoreStatement.java:115)<br/>	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:49)<br/>	at antywirusMain.Antywirus.createTable(Antywirus.java:78)<br/>	at antywirusMain.AntywirusTest.closeCon(AntywirusTest.java:206)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)<br/>	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/>java.sql.SQLException: statement is not executing<br/>	at org.sqlite.core.CoreStatement.checkOpen(CoreStatement.java:50)<br/>	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:46)<br/>	at antywirusMain.Antywirus.dropTable(Antywirus.java:184)<br/></span>
+<span class="stderr">org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (Connection is closed)<br/>	at org.sqlite.core.DB.newSQLException(DB.java:909)<br/>	at org.sqlite.core.CoreStatement.internalClose(CoreStatement.java:115)<br/>	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:49)<br/>	at antywirusMain.Antywirus.createTable(Antywirus.java:86)<br/>	at antywirusMain.AntywirusTest.closeCon(AntywirusTest.java:251)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)<br/>	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/>java.sql.SQLException: statement is not executing<br/>	at org.sqlite.core.CoreStatement.checkOpen(CoreStatement.java:50)<br/>	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:46)<br/>	at antywirusMain.Antywirus.dropTable(Antywirus.java:221)<br/>	at antywirusMain.AntywirusTest.tearDown(AntywirusTest.java:27)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/></span>
 </li>
 </ul>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">175 ms</div>
+<div class="time">162 ms</div>
 </em><em class="status">passed</em>selectPakiet</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">189 ms</div>
+</em><em class="status">passed</em>updateinAntywir</span>
 </li>
 </ul>
 </li>
@@ -660,7 +670,7 @@ jQuery.cookie = function(name, value, options) {
 </div>
 </div>
 <div id="footer">
-<p>Generated by IntelliJ IDEA on 23.11.16 22:09</p>
+<p>Generated by IntelliJ IDEA on 23.11.16 23:38</p>
 </div>
 </body>
 </html>

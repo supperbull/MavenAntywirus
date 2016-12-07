@@ -20,6 +20,7 @@ public class Antywirus {
     private PreparedStatement insertAntywirStat;
     private PreparedStatement selectpakietStat;
     private PreparedStatement selectAntywirStat;
+    private PreparedStatement selectAntywirStatt;
     private PreparedStatement dropTablepakietStat;
     private PreparedStatement dropTableAntywirStat;
     private PreparedStatement deleteFrompakietStat;

@@ -193,6 +193,55 @@ public class AntywirusTest {
     }
 
     @Test
+    public void selectpakietantywir() throws Exception {
+        TabelaPakiet ww1=new TabelaPakiet();
+        ww1.setpakiet("darmowy");
+        ww1.setOpis("Antywirus do użytku domowego");
+        ww1.setcena(0.0);
+        TabelaPakiet ww2=new TabelaPakiet();
+        ww2.setpakiet("Firmowy");
+        ww2.setOpis("Antywirus do użytku domowego");
+        ww2.setcena(199.99);
+        assertTrue(anty.insertInPakiet(ww1));
+        assertTrue(anty.insertInPakiet(ww2));
+        List<TabelaPakiet> me=anty.selectPakiet();
+
+        Long id=anty.selectPakiet().get(0).getid_pakiet();
+        Long id2=anty.selectPakiet().get(1).getid_pakiet();
+
+        TabelaAntywir ee1=new TabelaAntywir();
+        ee1.setNazwaAntywir("Ultimate");
+        ee1.setOpis("Antywirus najwyższa wersja");
+        ee1.setocena(8.5);
+        ee1.setidpakiet(id);
+        TabelaAntywir ee2=new TabelaAntywir();
+        ee2.setNazwaAntywir("Ultimateeeeeee");
+        ee2.setOpis("Antywirus najweeeeyższa wersja");
+        ee2.setocena(8.3);
+        ee2.setidpakiet(id);
+        TabelaAntywir ee3=new TabelaAntywir();
+        ee3.setNazwaAntywir("Ultimateeeeeee");
+        ee3.setOpis("Antywirus najweeeeyższa wersja");
+        ee3.setocena(8.3);
+        ee3.setidpakiet(id2);
+        TabelaAntywir ee4=new TabelaAntywir();
+        ee4.setNazwaAntywir("Ultimateeeeeee");
+        ee4.setOpis("Antywirus najweeeeyższa wersja");
+        ee4.setocena(8.3);
+        ee4.setidpakiet(id);
+
+        assertTrue(anty.insertInAntywir(ee1));
+        assertTrue(anty.insertInAntywir(ee2));
+        assertTrue(anty.insertInAntywir(ee3));
+        assertTrue(anty.insertInAntywir(ee4));
+        List<TabelaAntywir> me2=anty.selectAntywir();
+
+        List<TabelaAntywir> cat=anty.selectAntywir();
+        assertEquals(id,cat.get(1).getidpakiet());
+        assertEquals(id2,cat.get(2).getidpakiet());
+    }
+
+    @Test
     public void deleteFromPakiet() throws Exception {
 
         TabelaPakiet m1=new TabelaPakiet();
